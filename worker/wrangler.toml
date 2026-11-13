@@ -1,0 +1,9 @@
+name = "drekutsebo-github-io"
+main = "src/index.ts"
+compatibility_date = "2025-01-15"
+
+[vars]
+GH_BRANCH = "main"
+GH_DATA_PATH = "data.json"
+ALLOWED_ORIGIN = "https://drekutsebo.github.io"
+

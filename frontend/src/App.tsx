@@ -1,0 +1,12 @@
+import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import {AuthProvider} from './components/AuthProvider'
+import Layout from './components/Layout'
+import ProtectedRoute from './components/ProtectedRoute'
+import HomePage from './pages/HomePage'
+import AttendancePage from './pages/AttendancePage'
+import TestPage from './pages/TestPage'
+import SimulatorPage from './pages/SimulatorPage'
+import FlightsPage from './pages/FlightsPage'
+import LeaderboardPage from './pages/LeaderboardPage'
+import NotFoundPage from './pages/NotFoundPage'
+export default function App(){return <AuthProvider><BrowserRouter><Routes><Route element={<Layout/>}><Route index element={<HomePage/>}/><Route path="test" element={<TestPage/>}/><Route path="leaderboard" element={<LeaderboardPage/>}/><Route element={<ProtectedRoute/>}><Route path="attendance" element={<AttendancePage/>}/><Route path="simulator" element={<SimulatorPage/>}/><Route path="flights" element={<FlightsPage/>}/></Route><Route path="*" element={<NotFoundPage/>}/></Route></Routes></BrowserRouter></AuthProvider>}
